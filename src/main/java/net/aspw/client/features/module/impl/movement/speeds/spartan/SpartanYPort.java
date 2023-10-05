@@ -20,7 +20,7 @@ public class SpartanYPort extends SpeedMode {
 
     @Override
     public void onMotion() {
-        if (!mc.gameSettings.keyBindJump.isKeyDown() && MovementUtils.isMoving()) {
+        if (MovementUtils.isMoving()) {
             if (mc.thePlayer.onGround) {
                 mc.thePlayer.jump();
                 airMoves = 0;

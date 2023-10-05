@@ -34,7 +34,7 @@ public class WatchdogStable extends SpeedMode {
         final Speed speed = Client.moduleManager.getModule(Speed.class);
         if (speed == null) return;
 
-        if (MovementUtils.isMoving() && !(mc.thePlayer.isInWater() || mc.thePlayer.isInLava()) && !mc.gameSettings.keyBindJump.isKeyDown()) {
+        if (MovementUtils.isMoving() && !(mc.thePlayer.isInWater() || mc.thePlayer.isInLava())) {
             double moveSpeed = Math.max(MovementUtils.getBaseMoveSpeed() * speed.baseStrengthValue.get(), MovementUtils.getSpeed());
 
             if (mc.thePlayer.onGround) {

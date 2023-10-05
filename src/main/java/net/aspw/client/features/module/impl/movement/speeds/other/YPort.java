@@ -36,7 +36,7 @@ public class YPort extends SpeedMode {
 
     @Override
     public void onMotion() {
-        if (!safeJump && !mc.gameSettings.keyBindJump.isKeyDown() && !mc.thePlayer.isOnLadder() && !mc.thePlayer.isInsideOfMaterial(Material.water) && !mc.thePlayer.isInsideOfMaterial(Material.lava) && !mc.thePlayer.isInWater() && ((!(this.getBlock(-1.1) instanceof BlockAir) && !(this.getBlock(-1.1) instanceof BlockAir)) || (!(this.getBlock(-0.1) instanceof BlockAir) && mc.thePlayer.motionX != 0.0 && mc.thePlayer.motionZ != 0.0 && !mc.thePlayer.onGround && mc.thePlayer.fallDistance < 3.0f && mc.thePlayer.fallDistance > 0.05)) && this.level == 3)
+        if (!safeJump && !mc.thePlayer.isOnLadder() && !mc.thePlayer.isInsideOfMaterial(Material.water) && !mc.thePlayer.isInsideOfMaterial(Material.lava) && !mc.thePlayer.isInWater() && ((!(this.getBlock(-1.1) instanceof BlockAir) && !(this.getBlock(-1.1) instanceof BlockAir)) || (!(this.getBlock(-0.1) instanceof BlockAir) && mc.thePlayer.motionX != 0.0 && mc.thePlayer.motionZ != 0.0 && !mc.thePlayer.onGround && mc.thePlayer.fallDistance < 3.0f && mc.thePlayer.fallDistance > 0.05)) && this.level == 3)
             mc.thePlayer.motionY = -0.3994;
 
         double xDist = mc.thePlayer.posX - mc.thePlayer.prevPosX;
